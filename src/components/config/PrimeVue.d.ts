@@ -1,4 +1,4 @@
-import Vue, { PluginFunction } from 'vue';
+import Vue, { App } from 'vue';
 
 interface PrimeVueConfiguration {
     ripple?: boolean;
@@ -49,9 +49,11 @@ interface PrimeVueLocaleOptions {
     emptyMessage?: string;
 }
 
+declare type PluginInstallFunction = (app: App, ...options: any[]) => any;
+
 export declare function usePrimeVue(): PrimeVueConfiguration;
 
-export const install: PluginFunction<{}>;
+export const install: PluginInstallFunction;
 
 declare module 'vue/types/vue' {
     interface Vue {
